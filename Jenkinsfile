@@ -4,9 +4,15 @@ pipeline {
        DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials')
     }
   
- // Building Docker images
     stages {
-    stage('Build') {
+      stage('gitclone') {
+      steps {
+        git 'https://github.com/sosotechnologies/december-pipeline.git'
+      }
+    }
+
+    stages {
+      stage('Build') {
       steps {
         sh 'docker build -t sosotech/dp-alpine:latest .'
       }
