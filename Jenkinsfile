@@ -18,7 +18,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t sosotech/nodeapp_test:latest .'
+				sh 'docker build -t sosotech/sososomos:latest .'
 			}
 		}
 
@@ -32,7 +32,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push sosotech/nodeapp_test:latest'
+				sh 'docker push sosotech/sososomos:latest'
 			}
 		}
 	}
